@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'weather/ui/weather_widget.dart';
 
 void main() {
   runApp(WeatherApp());
@@ -22,11 +23,10 @@ class _WeatherHomePageState extends State<WeatherApp> {
     // This method is rerun every time setState is called
     return MaterialApp(
         home: Scaffold(
-            appBar: AppBar(
-              title: Text("Weather"),
-            ),
-            body: Center(
-              child: Text("Current Weather Placeholder"),
-            )));
+      appBar: AppBar(
+        title: Text("Weather"),
+      ),
+      body: WeatherWidget(),
+    ));
   }
 }
