@@ -1,4 +1,4 @@
-name: weather
+name: weather_project
 description: Flutter application to show current weather using the device location. This is for Thinkific tryout.
 
 # The following line prevents the package from being accidentally published to
@@ -23,6 +23,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  # This is to get weather info from http://openweathermap.org/
+  weather: ^1.2.4
+  # For implementing bloc architecture pattern.
+  flutter_bloc: ^6.1.1
+  # For annotations
+  meta: ^1.2.4
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -31,6 +37,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  # For generating android and iOS icons from a generic icon.
   flutter_launcher_icons: ^0.8.1
 
 flutter_icons:
