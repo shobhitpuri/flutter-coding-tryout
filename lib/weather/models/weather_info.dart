@@ -9,6 +9,11 @@ enum WeatherCondition {
   Clouds
 }
 
+/// Although the weather package has a class named Weather with all the API result,
+/// I created the class with the limited set we need for out app.
+/// Even if we swap the Open Weather API or the weather package, we'd only need
+/// to populate this class object to show information we want. '
+
 class WeatherInfo {
   /// Location string to show on widget.
   String location;
