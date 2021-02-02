@@ -23,3 +23,15 @@ class BigBoldTextStyle extends TextStyle {
   @override
   Color get color => Colors.black;
 }
+
+/// TextStyle for SnackBar text
+class SnackBarTextStyle extends TextStyle {
+  @override
+  double get fontSize => 16;
+
+  @override
+  FontWeight get fontWeight => FontWeight.normal;
+
+  @override
+  Color get color => Colors.white;
+}

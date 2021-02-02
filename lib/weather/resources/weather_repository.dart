@@ -1,7 +1,7 @@
 import 'package:meta/meta.dart';
 
 import '../resources/weather_abstract_client.dart';
-import '../models/weather_info.dart';
+import '../models/weather_info_abstract.dart';
 
 /// Weather Repository to fetch weather details.
 ///
