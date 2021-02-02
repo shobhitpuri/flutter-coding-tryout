@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather_project/common/ui/toast_util.dart';
 
+import '../../../common/ui/text_styles.dart';
+import '../../ui/widgets/background_widget.dart';
 import '../../bloc/events/events.dart';
 import '../../bloc/states/states.dart';
 import '../../bloc/weather_bloc.dart';
@@ -31,25 +32,42 @@ class _WeatherHomeScreenState extends State<WeatherHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Weather"),
-      ),
+        appBar: AppBar(title: Text('Weather')),
 
-      // BlocBuilder listen to the changes from the bloc file and updates the UI
-      body: BlocBuilder<WeatherBloc, WeatherState>(
-          builder: (BuildContext context, WeatherState state) {
-        // Based on the state, show the widget.
-        if (state is WeatherStateError) {
-          ToastUtil.showToast("Please try again later. ${state?.error}");
-          return WeatherWidget(weatherInfo: null);
-        }
-        if (state is WeatherStateLoaded) {
-          return WeatherWidget(weatherInfo: state.weatherInfo);
-        }
-        return WeatherLoadingWidget();
-      }),
-    );
+        // We use the BlocListener widget in order to "do things" in response to
+        // state changes in our WeatherBloc.
+        body: BlocListener<WeatherBloc, WeatherState>(
+          listener: (context, state) {
+            // Show a SnackBar in case of error.
+            if (state is WeatherStateError) {
+              Scaffold.of(context).showSnackBar(
+                SnackBar(
+                  backgroundColor: Colors.black54,
+                  content: Text(state?.error,
+                      textAlign: TextAlign.center, style: SnackBarTextStyle()),
+                ),
+              );
+            }
+          },
+
+          // We use the BlocBuilder widget in order to "render" widgets in
+          // response to state changes in our WeatherBloc.
+          child: BlocBuilder<WeatherBloc, WeatherState>(
+            builder: (context, state) {
+              // Based on the state, show the widget.
+              if (state is WeatherStateError) {
+                return WeatherWidget(weatherInfo: null);
+              }
+              if (state is WeatherStateLoaded) {
+                return BackgroundWeatherThemeWidget(
+                    child: WeatherWidget(weatherInfo: state?.weatherInfo),
+                    backgroundImagePathForWeatherCondition: state
+                        ?.weatherInfo?.backgroundImagePathForWeatherCondition);
+              }
+              return WeatherLoadingWidget();
+            },
+          ),
+        ));
   }
 }

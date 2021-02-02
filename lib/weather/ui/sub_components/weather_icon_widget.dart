@@ -22,7 +22,7 @@ class WeatherIconWidget extends StatelessWidget {
         : Icon(
             Icons.cloud_off_rounded,
             color: Colors.grey,
-            size: 80.0,
+            size: 60.0,
           );
   }
 }

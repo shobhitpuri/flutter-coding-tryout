@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../models/weather_info.dart';
+import '../../models/weather_info_abstract.dart';
 import '../../../common/ui/text_styles.dart';
 import 'weather_icon_widget.dart';
 

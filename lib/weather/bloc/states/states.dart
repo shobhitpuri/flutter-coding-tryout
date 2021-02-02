@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import '../../models/weather_info.dart';
+import '../../models/weather_info_open_weather_api.dart';
 
 /// Extend the Equatable class to compare CurrentWeatherState objects.
 abstract class WeatherState extends Equatable {
@@ -12,7 +12,7 @@ class WeatherStateInit extends WeatherState {}
 class WeatherStateLoading extends WeatherState {}
 
 class WeatherStateLoaded extends WeatherState {
-  final WeatherInfo weatherInfo;
+  final OpenWeatherInfo weatherInfo;
 
   WeatherStateLoaded({this.weatherInfo});
 }
@@ -20,5 +20,5 @@ class WeatherStateLoaded extends WeatherState {
 class WeatherStateError extends WeatherState {
   final dynamic error;
 
-  WeatherStateError(this.error);
+  WeatherStateError({this.error});
 }
