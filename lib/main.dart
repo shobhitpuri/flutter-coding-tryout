@@ -1,32 +1,33 @@
 import 'package:flutter/material.dart';
-import 'weather/ui/weather_widget.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_project/weather/ui/screens/weather_home_screen.dart';
+
+import 'weather/bloc/weather_bloc.dart';
+import 'weather/resources/weather_openweather_client.dart';
+import 'weather/resources/weather_repository.dart';
 
 void main() {
-  runApp(WeatherApp());
+  final WeatherRepository weatherRepository =
+  WeatherRepository(weatherApiClient: OpenWeatherMapApiClient());
+
+  runApp(App(weatherRepository: weatherRepository));
 }
 
-class WeatherApp extends StatefulWidget {
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State.
+class App extends StatelessWidget {
+  final WeatherRepository weatherRepository;
 
-  @override
-  _WeatherHomePageState createState() => _WeatherHomePageState();
-}
+  App({Key key, @required this.weatherRepository})
+      : assert(weatherRepository != null),
+        super(key: key);
 
-class _WeatherHomePageState extends State<WeatherApp> {
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called
     return MaterialApp(
-        home: Scaffold(
-      appBar: AppBar(
-        title: Text("Weather"),
+      title: 'Weather',
+      home: BlocProvider(
+        create: (context) => WeatherBloc(weatherRepository: weatherRepository),
+        child: WeatherHomeScreen(),
       ),
-      body: WeatherWidget(),
-    ));
+    );
   }
 }
