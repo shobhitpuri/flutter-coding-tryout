@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
-import 'sub_components/weather_location_widget.dart';
-import 'sub_components/weather_description_widget.dart';
-import 'sub_components/weather_temp_humidity_widget.dart';
+import '../../models/weather_info.dart';
+import '../sub_components/weather_location_widget.dart';
+import '../sub_components/weather_description_widget.dart';
+import '../sub_components/weather_temp_humidity_widget.dart';
+
+/// Weather widget is the parent class for the widget that shows all information
 
 class WeatherWidget extends StatelessWidget {
+  final WeatherInfo weatherInfo;
+
+  WeatherWidget({Key key, @required this.weatherInfo})
+      : assert(weatherInfo != null),
+        super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -22,16 +31,22 @@ class WeatherWidget extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                    // Location
                     Padding(
                       padding: EdgeInsets.only(top: 10),
-                      child: WeatherLocationWidget(),
+                      child: WeatherLocationWidget(weatherInfo: weatherInfo),
                     ),
+                    // Icon and description
                     Padding(
                         padding: EdgeInsets.only(top: 10),
-                        child: WeatherDescriptionWidget()),
+                        child:
+                            WeatherDescriptionWidget(weatherInfo: weatherInfo)),
+                    // Temperature and humidity details.
                     Padding(
                         padding: EdgeInsets.only(top: 10, bottom: 10),
-                        child: WeatherTempHumidityWidget())
+                        child: WeatherTempHumidityWidget(
+                          weatherInfo: weatherInfo,
+                        ))
                   ],
                 ))));
   }

@@ -14,7 +14,7 @@ class OpenWeatherMapApiClient implements WeatherAPIClient {
   Future<WeatherInfo> fetchCurrentWeather(double lat, double lon) async {
     Weather weather = await _weatherFactory?.currentWeatherByLocation(lat, lon);
     WeatherInfo weatherInfo = new WeatherInfo(
-        "${weather?.areaName} ${weather?.country}",
+        "${weather?.areaName}",
         weather?.weatherIcon,
         weather?.weatherDescription,
         weather?.temperature?.celsius,
