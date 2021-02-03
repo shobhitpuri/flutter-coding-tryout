@@ -6,6 +6,7 @@ abstract class WeatherEvents {}
 class WeatherFetchEvent extends WeatherEvents {
   final double lat;
   final double lon;
+
   WeatherFetchEvent({@required this.lat, @required this.lon});
 }
 
@@ -15,3 +16,6 @@ class WeatherErrorEvent extends WeatherEvents {
 
   WeatherErrorEvent({this.error});
 }
+
+/// Refresh weather
+class WeatherRefreshEvent extends WeatherFetchEvent {}

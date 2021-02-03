@@ -1,10 +1,6 @@
-import 'package:equatable/equatable.dart';
 import '../../models/weather_info_open_weather_api.dart';
 
-abstract class WeatherState extends Equatable {
-  @override
-  List<Object> get props => [];
-}
+abstract class WeatherState {}
 
 class WeatherInitState extends WeatherState {}
 

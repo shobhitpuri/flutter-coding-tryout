@@ -14,17 +14,19 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
   @override
   Stream<LocationState> mapEventToState(LocationEvent event) async* {
     // Handle LocationFetchEvent
-    if (event is LocationFetchEvent) {
+    if (event is LocationFetchEvent || event is LocationRefreshEvent) {
       yield* _mapLocationFetchEventToState();
     }
 
     // Handle LocationReceivedSuccessEvent
     if (event is LocationReceivedSuccessEvent) {
+      print("LocationBloc: yield LocationLoadedState");
       yield LocationLoadedState(position: event.position);
     }
 
     // Handle LocationErrorEvent
     if (event is LocationErrorEvent) {
+      print("LocationBloc: yield LocationErrorState");
       yield LocationErrorState(error: event?.error);
     }
   }
@@ -36,6 +38,7 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
 
     // Check if service is disable or enabled
     bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    print("LocationBloc: serviceEnabled: ${serviceEnabled}");
     if (!serviceEnabled) {
       add(LocationErrorEvent(
           error: 'Location services are disabled. '
@@ -45,6 +48,7 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
     // If service enabled, check permissions.
     else {
       LocationPermission permission = await Geolocator.checkPermission();
+      print("LocationBloc: permission: ${permission}");
 
       // If permission was denied for always, we can't ask again.
       if (permission == LocationPermission.deniedForever) {
