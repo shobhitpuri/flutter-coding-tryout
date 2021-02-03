@@ -27,15 +27,16 @@ class WeatherBloc extends Bloc<WeatherEvents, WeatherState> {
     // React to state changes from location here.
     // Add WeatherEvents in response to state changes in LocationBloc
     _locationBlocSubscription = locationBloc.listen((state) {
-      // If location fetch sucessful, are ready, weather fetch can be initiated.
+      // If location fetch successful, are ready, weather fetch can be initiated.
       if (state is LocationLoadedState) {
-        _locationBlocSubscription?.cancel();
+        print("WeatherBloc: LocationBloc: Listener: LocationLoadedState");
         add(WeatherFetchEvent(
             lat: state?.position?.latitude, lon: state?.position?.longitude));
       }
 
       // If location wasn't received, start process of showing error.
       if (state is LocationErrorState) {
+        print("WeatherBloc: LocationBloc: Listener: LocationErrorState");
         add(WeatherErrorEvent(error: state?.error));
       }
     });
@@ -43,12 +44,13 @@ class WeatherBloc extends Bloc<WeatherEvents, WeatherState> {
 
   @override
   Stream<WeatherState> mapEventToState(WeatherEvents event) async* {
-    if (event is WeatherFetchEvent) {
+    if (event is WeatherFetchEvent || event is WeatherRefreshEvent) {
       yield* _mapWeatherFetchEventToState(event);
     }
 
     // Handle weather error event
     else if (event is WeatherErrorEvent) {
+      print("WeatherBloc: Yield WeatherErrorState");
       yield WeatherErrorState(error: event?.error);
     }
   }
@@ -64,6 +66,7 @@ class WeatherBloc extends Bloc<WeatherEvents, WeatherState> {
 
     // If weather information was returned successfully
     if (_weatherInfo != null) {
+      print("WeatherBloc: Yield WeatherLoadedState");
       yield WeatherLoadedState(weatherInfo: _weatherInfo);
     }
 
@@ -73,6 +76,7 @@ class WeatherBloc extends Bloc<WeatherEvents, WeatherState> {
       // throwed back exceptions. It right now catches them, and prints.
       // I've opened an issue on their GitHUb:
       // https://github.com/cph-cachet/flutter-plugins/issues/280
+      print("WeatherBloc: Yield WeatherErrorState Network");
       yield WeatherErrorState(
           error:
               "Opps! Something is not right. Please check your connectivity and try again.");
@@ -82,6 +86,7 @@ class WeatherBloc extends Bloc<WeatherEvents, WeatherState> {
   @override
   Future<void> close() {
     // StreamSubscription is closed to avoid memory leaks.
+    print("WeatherBloc: _locationBlocSubscription");
     _locationBlocSubscription.cancel();
     return super.close();
   }

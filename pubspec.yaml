@@ -29,8 +29,6 @@ dependencies:
   flutter_bloc: ^6.1.1
   # For annotations
   meta: ^1.2.4
-  # Prevent any code generation to auto handle comparing objects.
-  equatable: ^1.2.5
   # Show images from the internet and keep them in the cache directory.
   cached_network_image: ^2.5.0
   # Location

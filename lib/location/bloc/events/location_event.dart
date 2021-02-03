@@ -18,3 +18,6 @@ class LocationErrorEvent extends LocationEvent {
 
   LocationErrorEvent({this.error});
 }
+
+/// Refresh Location
+class LocationRefreshEvent extends LocationFetchEvent {}
