@@ -19,40 +19,21 @@ class WeatherHomeScreen extends StatefulWidget {
   _WeatherHomeScreenState createState() => _WeatherHomeScreenState();
 }
 
-class _WeatherHomeScreenState extends State<WeatherHomeScreen>
-    with WidgetsBindingObserver {
+class _WeatherHomeScreenState extends State<WeatherHomeScreen> {
   @override
   void initState() {
     super.initState();
     print("WeatherHomeScreenState: initState");
-    WidgetsBinding.instance.addObserver(this);
-  }
-
-  @override
-  void dispose() {
-    WidgetsBinding.instance.removeObserver(this);
-    super.dispose();
-  }
-
-  @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-    // User returned to app.
-    // Called when screen is visible and responding to user input.
-    // True for fresh opening of app as well as coming back to it
-    // from background drawer.
-    if (state == AppLifecycleState.resumed) {
-      print("WeatherHomeScreenState: didChangeAppLifecycleState: onResume");
-      // refresh the weather now, without needing the user to refresh using
-      // pull to refresh. User intention is to see latest weather when opening
-      // the app.
-      _refreshLocationWeather();
-    }
+    _refreshLocationWeather();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text('Weather')),
+        appBar: AppBar(
+          title: Text('Weather'),
+          backgroundColor: Colors.blue,
+        ),
 
         // We use the BlocListener widget in order to "do things" in response to
         // state changes in our WeatherBloc.
@@ -99,7 +80,9 @@ class _WeatherHomeScreenState extends State<WeatherHomeScreen>
     // Return weather widget for error but with no information.
     print("HomeScreen: _getWidgetBasedOnState: ${state.runtimeType}");
     if (state is WeatherErrorState) {
-      return WeatherWidget(weatherInfo: null);
+      return BackgroundWeatherThemeWidget(
+          child: WeatherWidget(weatherInfo: null),
+          backgroundImagePathForWeatherCondition: null);
     }
 
     // Return weather widget for load success with background and information.

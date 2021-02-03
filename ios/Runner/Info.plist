@@ -47,5 +47,8 @@
   <string>App requires location access for fetching weather of current location.</string>
   <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
   <string>App requires location access for fetching weather of current location.</string>
+	<key>UIStatusBarHidden</key>
+	<true/>
+
 </dict>
 </plist>

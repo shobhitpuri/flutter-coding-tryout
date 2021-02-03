@@ -59,15 +59,15 @@ class OpenWeatherInfo extends WeatherInfo {
       case WeatherCondition.Snow:
         return "assets/background/snow.webp";
       case WeatherCondition.Atmosphere:
-        return "assets/background/atmosphere.webp";
+        return "assets/background/default.webp";
       case WeatherCondition.Clear:
         return "assets/background/clear.webp";
       case WeatherCondition.Clouds:
         return "assets/background/cloudy.webp";
       case WeatherCondition.None:
-        return "assets/background/atmosphere.webp";
+        return "assets/background/default.webp";
     }
-    return "assets/background/atmosphere.webp";
+    return "assets/background/default.webp";
   }
 
   /// Returns current weather condition enum.
