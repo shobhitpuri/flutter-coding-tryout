@@ -1,4 +1,4 @@
-import 'package:weather_project/weather/models/weather_info_abstract.dart';
+import '../models/weather_info_abstract.dart';
 import 'weather_condition_enum.dart';
 
 /// Contains details specific to Open Weather API.
@@ -24,8 +24,8 @@ class OpenWeatherInfo extends WeatherInfo {
       double tempMaxCelsius,
       double humidity,
       this._weatherConditionCode)
-      : super(areaName, country, weatherIcon, weatherDescription, temperatureCelsius,
-            tempMinCelsius, tempMaxCelsius, humidity) {
+      : super(areaName, country, weatherIcon, weatherDescription,
+            temperatureCelsius, tempMinCelsius, tempMaxCelsius, humidity) {
     this.weatherCondition = _getWeatherCondition();
     this.backgroundImagePathForWeatherCondition =
         _getBackgroundImagePathForWeatherCondition(weatherCondition);
@@ -52,21 +52,22 @@ class OpenWeatherInfo extends WeatherInfo {
       WeatherCondition _weatherCondition) {
     switch (_weatherCondition) {
       case WeatherCondition.Thunderstorm:
-        return "assets/thunderstorm.webp";
+        return "assets/background/thunderstorm.webp";
       case WeatherCondition.Drizzle:
       case WeatherCondition.Rain:
-        return "assets/rain.webp";
+        return "assets/background/rain.webp";
       case WeatherCondition.Snow:
-        return "assets/snow.webp";
+        return "assets/background/snow.webp";
       case WeatherCondition.Atmosphere:
-        return "assets/atmosphere.webp";
+        return "assets/background/atmosphere.webp";
       case WeatherCondition.Clear:
-        return "assets/clear.webp";
+        return "assets/background/clear.webp";
       case WeatherCondition.Clouds:
-        return "assets/cloudy.webp";
+        return "assets/background/cloudy.webp";
       case WeatherCondition.None:
-        return "assets/atmosphere.webp";
+        return "assets/background/atmosphere.webp";
     }
+    return "assets/background/atmosphere.webp";
   }
 
   /// Returns current weather condition enum.
