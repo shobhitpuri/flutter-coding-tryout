@@ -6,6 +6,7 @@ class BackgroundWeatherThemeWidget extends StatelessWidget {
 
   // local asset location path like 'asset/image.webp"
   final String backgroundImagePathForWeatherCondition;
+  final String _defaultBackgroundAssetPath = "assets/background/default.webp";
 
   const BackgroundWeatherThemeWidget({
     Key key,
@@ -20,7 +21,8 @@ class BackgroundWeatherThemeWidget extends StatelessWidget {
         constraints: BoxConstraints.expand(),
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage(backgroundImagePathForWeatherCondition),
+                image: AssetImage(backgroundImagePathForWeatherCondition ??
+                    _defaultBackgroundAssetPath),
                 fit: BoxFit.cover)),
         child: child);
   }
