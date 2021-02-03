@@ -1,3 +1,0 @@
-enum WeatherEvents {
-  fetchWeather
-}

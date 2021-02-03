@@ -33,6 +33,8 @@ dependencies:
   equatable: ^1.2.5
   # Show images from the internet and keep them in the cache directory.
   cached_network_image: ^2.5.0
+  # Location
+  geolocator: ^6.1.14
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -56,12 +58,12 @@ flutter_icons:
 flutter:
   # Assets to use for background.
   assets:
-    - assets/atmosphere.webp
-    - assets/clear.webp
-    - assets/cloudy.webp
-    - assets/rain.webp
-    - assets/snow.webp
-    - assets/thunderstorm.webp
+    - assets/background/atmosphere.webp
+    - assets/background/clear.webp
+    - assets/background/cloudy.webp
+    - assets/background/rain.webp
+    - assets/background/snow.webp
+    - assets/background/thunderstorm.webp
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

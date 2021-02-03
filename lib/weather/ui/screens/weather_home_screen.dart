@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../location/bloc/events/location_event.dart';
+import '../../../location/bloc/location_bloc.dart';
 import '../../../common/ui/text_styles.dart';
 import '../../ui/widgets/background_widget.dart';
-import '../../bloc/events/events.dart';
-import '../../bloc/states/states.dart';
+import '../../bloc/states/weather_states.dart';
 import '../../bloc/weather_bloc.dart';
 import '../../ui/widgets/weather_loading_widget.dart';
 import '../../ui/widgets/weather_widget.dart';
@@ -22,12 +23,13 @@ class _WeatherHomeScreenState extends State<WeatherHomeScreen> {
   @override
   void initState() {
     super.initState();
-    _startWeatherFetch();
+    _getCurrentLocation();
   }
 
+  // TODO:
   /// Starts fetching weather
-  _startWeatherFetch() async {
-    context.read<WeatherBloc>().add(WeatherEvents.fetchWeather);
+  _getCurrentLocation() async {
+    context.read<LocationBloc>().add(LocationFetchEvent());
   }
 
   @override
@@ -40,7 +42,7 @@ class _WeatherHomeScreenState extends State<WeatherHomeScreen> {
         body: BlocListener<WeatherBloc, WeatherState>(
           listener: (context, state) {
             // Show a SnackBar in case of error.
-            if (state is WeatherStateError) {
+            if (state is WeatherErrorState) {
               Scaffold.of(context).showSnackBar(
                 SnackBar(
                   backgroundColor: Colors.black54,
@@ -56,10 +58,10 @@ class _WeatherHomeScreenState extends State<WeatherHomeScreen> {
           child: BlocBuilder<WeatherBloc, WeatherState>(
             builder: (context, state) {
               // Based on the state, show the widget.
-              if (state is WeatherStateError) {
+              if (state is WeatherErrorState) {
                 return WeatherWidget(weatherInfo: null);
               }
-              if (state is WeatherStateLoaded) {
+              if (state is WeatherLoadedState) {
                 return BackgroundWeatherThemeWidget(
                     child: WeatherWidget(weatherInfo: state?.weatherInfo),
                     backgroundImagePathForWeatherCondition: state
