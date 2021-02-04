@@ -3,11 +3,11 @@
 
 *Any notes you might want us to be aware of.*
 
-My main approach throughout the tryout opporunity has been to approach this like a real production app. This includes writing clean, well commented, decoupled, well architected and testable code. I've also tried to show the processes that I follow along the way to achieve that.
+My main approach throughout the tryout opportunity has been to approach this like a real production app. This includes writing clean, well commented, decoupled, well architected and testable code. I've also tried to show the processes that I follow along the way to achieve that.
 ___
 
 ### Features Implemented:
-You can find the set of the tasks I worked on by seeing the `Done` tab on the [GitHub Project Board](https://github.com/shobhitpuri/thinkific-tryout/projects/1). Here is a consise list
+You can find the set of the tasks I worked on by seeing the `Done` tab on the [GitHub Project Board](https://github.com/shobhitpuri/thinkific-tryout/projects/1). Here is a concise list
   - Created a widget showing to show current weather details like temperature, humidity, min / max temperature, location, description and weather condition icon. The weather icon fetched from network, is also cached for better performance. 
   - Added custom background for all weather conditions. Converted the locally stored images to `webp` format to get better performance and smaller size.
   - Implemented pull-to-refresh to enable user to refresh the location and weather information.
@@ -27,7 +27,7 @@ ___
 ### Instructions for how to build & run the app. 
 *Please provide any information we need to be able to review your app.*
 #### Demo / Installation
-- **Install the Android app** from here: https://www.dropbox.com/s/rh2aqkcaxxyxtia/WeatherApp_Release_Shobhit.apk?dl=0 . I've also included this release build in the folder named `apk` above. To install the apk, you might need to allow your Android OS to install `apk` from unknown sources from the `Settings` app. I also released the app on Google Play, to use the private closed alpha testing that they offer. It is still pending review and won't be public. It'd require me to add the gmail IDs of the testers to allow installation. Here is the URL: https://play.google.com/apps/internaltest/4700635866713086531 . Let me know if you want an invitation. Simplest is to just use the dropbox link to install.
+- **Install the Android app** from here: https://www.dropbox.com/s/rh2aqkcaxxyxtia/WeatherApp_Release_Shobhit.apk?dl=0 . I've also included this release build in the folder named `apk` above. To install the apk, you might need to allow your Android OS to install `apk` from unknown sources from the `Settings` app. I also released the app on Google Play, to use the private closed alpha testing that they offer. It is still pending review and won't be public. It'd require me to add the Gmail IDs of the testers to allow installation. Here is the URL: https://play.google.com/apps/internaltest/4700635866713086531 . Let me know if you want an invitation. Simplest is to just use the dropbox link to install.
 
 - **Demo video of the app running on Android phone** here:
 
@@ -88,20 +88,20 @@ ___
 -  **API level**: The minimum assumed Android OS level is 4.1 and above, which covers over 99.8% of the Android devices. For iOS, min level assumed is iOS 9, which covers more than 99% of the iOS devices.
 - **Orientation**: Only portrait mode supported.
 - **Devices**: Only tested on iPhone, iPad, Android Phones and tablets. Assumed that the support other apple or android devices like TV or Watches isn't supported for the tryout purpose.
-- **IDE**: I used Android Studio to develop this app and assumed that the team working on the app would use the same IDE for consistent experience. However irrespecitive of that I configured the `.gitignore` file in a way that it doesn't matter if they use IntelliJ, Android Studio or VS Code for the development. It ignores the unneeded generated files from all of them.
+- **IDE**: I used Android Studio to develop this app and assumed that the team working on the app would use the same IDE for consistent experience. However irrespective of that I configured the `.gitignore` file in a way that it doesn't matter if they use IntelliJ, Android Studio or VS Code for the development. It ignores the unneeded generated files from all of them.
 - **Development Experience**: I assumed that I am working on a real life app to be released into production. This way I tried to mimic the process followed, including pull requests, branches, task management, release builds etc. Due to time constraint, I couldn't do all that I wanted, which I have documented in subsequent questions.
  ___
 
 ### Why did you choose the technology/framework you used?
 Q:*What were your considerations behind the technology/framework chosen?*
 
-- **App Development Framework:** I chose Flutter. One of the requiement was it to support both Android and iOS operating systems. Out of all the cross platform frameworks that have existed, flutter is most promising in my humble opinion. Comparing it to React Native, which is the next most popular one, it is faster, since there is no conversion layer. Flutter engine doesn’t need a bridge to communicate with the native components, whereas React Native does. It gives the React Native approach a poorer performance in comparison. Flutter is also actively supported by Google, and has an exponentially growing support community. Also, I love the flutter hot reload feature of Flutter. It saves so much time. Being developed native apps, this was truly the gem that was missing for a long time. 
+- **App Development Framework:** I chose Flutter. One of the requirement was it to support both Android and iOS operating systems. Out of all the cross platform frameworks that have existed, flutter is most promising in my humble opinion. Comparing it to React Native, which is the next most popular one, it is faster, since there is no conversion layer. Flutter engine doesn’t need a bridge to communicate with the native components, whereas React Native does. It gives the React Native approach a poorer performance in comparison. Flutter is also actively supported by Google, and has an exponentially growing support community. Also, I love the flutter hot reload feature of Flutter. It saves so much time. Being developed native apps, this was truly the gem that was missing for a long time. 
 ___
 
 ### Stretch goals attempted
 *If applicable, use this area to tell us what stretch goals you attempted. What went well? What do you wish you could have done better? If you didn't attempt any of the stretch goals, feel free to let us know why.*
 
-I spent some time exploring the stretch goals. For example, the one that allows user to search for any location and see it's weather. I signed up for Google Places API key, and did some exploration. It'dhave definitely been a good addition. However due to time constraints, I couldn't include it in the project. 
+I spent some time exploring the stretch goals. For example, the one that allows user to search for any location and see it's weather. I signed up for Google Places API key, and did some exploration. It'd have definitely been a good addition. However due to time constraints, I couldn't include it in the project. 
 I believe I was able to show my approach to problem solving by implementing the main required features, and managing the tasks and processes involved with it. It shows how I would approach architecting and development of production level app, if there weren't any time constraints. Hope that provides you with some confidence on what you are looking for in an ideal candidate.
 
 ___
@@ -128,10 +128,10 @@ There are a lot of things I tried or thought about but left out due to time cons
   - **Consolidated styling parameters**: Having styling at one place to simplify future changes	
   - **AppBar colour** change based on weather conditions.
   - **Tests**: For now as a sample, I included few positive and negative unit test scenarios testing the `Bloc` classes in the project, after mocking the dependencies. The test suite should be more comprehensive for production apps.  Also having and running UI automation tests once a day at least would add to confidence level of production release. Either Firebase or Amazon device farms are well suited candidates.
-  - **Home screen widget** : I'd consider reusing the weather wiget to allow users to put it on their Android / iOS home screens. Lots of users might prefer that information on their home screen, rather than opening the app everytime.
-  - **Persistent notification**:  This could be another way, to not force user to open the app to see latest weather but consumes resources. We can listen to location changes in background and update this notification accordingly. This can be an optional featue for the user, enabled from Settings. 
-  - **Search Location Suggestions**: Like the extended task talked about, it'd be good to have a search bar where user could search any location. I wanted to integrate search bar with Google Places API to get the location suggestions. Then based on user selection, use the latitude and longitude to query the weather API. I had crated the Google Places API key to try this out. However due to time contraint couldn't include it in the project.
-  - **Favorite Location**: I thought about the choice of persistance layer to use for this feature. Also, wanted to include a ⭐ button on the widget to favorite it. I was debating with myself whether it'd be better to show the favorite locations as horizontal scrollview at the bottom of home page, or have it as a separate page linked from the navigation drawer. I like the prior approach better. However I couldn't include it as a part of the project.
+  - **Home screen widget** : I'd consider reusing the weather widget to allow users to put it on their Android / iOS home screens. Lots of users might prefer that information on their home screen, rather than opening the app everytime.
+  - **Persistent notification**:  This could be another way, to not force user to open the app to see latest weather but consumes resources. We can listen to location changes in background and update this notification accordingly. This can be an optional feature for the user, enabled from Settings. 
+  - **Search Location Suggestions**: Like the extended task talked about, it'd be good to have a search bar where user could search any location. I wanted to integrate search bar with Google Places API to get the location suggestions. Then based on user selection, use the latitude and longitude to query the weather API. I had crated the Google Places API key to try this out. However due to time constraint couldn't include it in the project.
+  - **Favorite Location**: I thought about the choice of persistence layer to use for this feature. Also, wanted to include a ⭐ button on the widget to favorite it. I was debating with myself whether it'd be better to show the favorite locations as horizontal scrollview at the bottom of home page, or have it as a separate page linked from the navigation drawer. I like the prior approach better. However I couldn't include it as a part of the project.
 
 
 **Tools, Processes and Other intricacies**
@@ -148,10 +148,10 @@ ___
 
 **Decision Explanations**: I'd like to take this opportunity to go through reasons of using some frameworks, packages and approaches that I used within the project below:
 
-  - **Flutter Dependencies** : Although some of the ones mentioned are explanined fine by the one line comments, I'd like to highlight a few:
+  - **Flutter Dependencies** : Although some of the ones mentioned are explained fine by the one line comments, I'd like to highlight a few:
   
     ![](https://user-images.githubusercontent.com/3515359/106869884-4c329900-6685-11eb-97ca-f2daf65ddab9.png)
-    - [weather](https://pub.dev/packages/weather): This package uses the `OpenWeatherMAP` API to get the current weather status as well as weather forecasts. I used this instead to reduce the boilerplate code, instead of setting up the `http` package and doing the REST call myself. This looks stable seeing their GitHub, and from verified developer. I still wanted the code to not explicitely used their model, since it'll bread things if we decide to change the weather API or we start using another package. So, to decouple it, you'll  find an `abstract` class called `WeatherInfo` with generic details that we'd need from any API. All the Open Weather API specific fields are in`OpenWeatherInfo` model, which extends the abstract class. You'll also see from code that I used a `WeatherRepository` and an `interface`  `WeatherAPIClient`. `OpenWeatherMapApiClient` implements this interface. That way we can have multiple API clients adhering to same `interface` in future. **All this so that, when/if we need to change or add another weather API, the existing code need not change a lot. So although this package was used to reduce API call boilerplate, the code takes care simplifying the error in case of future changes.**
+    - [weather](https://pub.dev/packages/weather): This package uses the `OpenWeatherMAP` API to get the current weather status as well as weather forecasts. I used this instead to reduce the boilerplate code, instead of setting up the `http` package and doing the REST call myself. This looks stable seeing their GitHub, and from verified developer. I still wanted the code to not explicitly used their model, since it'll bread things if we decide to change the weather API or we start using another package. So, to decouple it, you'll  find an `abstract` class called `WeatherInfo` with generic details that we'd need from any API. All the Open Weather API specific fields are in`OpenWeatherInfo` model, which extends the abstract class. You'll also see from code that I used a `WeatherRepository` and an `interface`  `WeatherAPIClient`. `OpenWeatherMapApiClient` implements this interface. That way we can have multiple API clients adhering to same `interface` in future. **All this so that, when/if we need to change or add another weather API, the existing code need not change a lot. So although this package was used to reduce API call boilerplate, the code takes care simplifying the error in case of future changes.**
 
     -  [flutter_bloc](https://pub.dev/packages/flutter_bloc): Clean architecture has been a talk of the town for a long time in mobile app developer community. There are many architectural patterns which would support write a clean code. They provide separation of concerns, isolating business logic, UI, and data layer, thereby also simplifying testability. The two popular ones include MVVM (Model-View-ViewModel) and BLoC (Business Logic Components). Although both are good, I decided to go with used `BLoC`. In my opinion, BLoC does the separation of concerns better than MVVM. With BLoC every communication in the app is stream of events. When widgets submit events, others respond and BLoC sits in the middle, managing the conversation. Whereas in MVVM, there is databindings between the view and the viewmodel, that's how they communicate. If some implementation changes in the view, one would need to do some changes in the view model as well. This is an overhead. In BLoC, it's just stream of events, so changing view implementation doesn't change much if same events are being used. I used this package, since it makes it easier to implement the BLoC design pattern.
     - [cahced_network_image](https://pub.dev/packages/cached_network_image): It is important to cache the images, since they are usually the heavier components. This package provide out of the box solution for it.
@@ -162,7 +162,7 @@ ___
 
   ![](https://user-images.githubusercontent.com/3515359/106870244-bc411f00-6685-11eb-9d98-457857fd29bb.png) 
   
-  - **webP**: Instead of using `png` or `jpg` files, which were large, I convereted most of the background images to `webP`. This reduced the load time and image size by multiple factors.
+  - **webP**: Instead of using `png` or `jpg` files, which were large, I converted most of the background images to `webP`. This reduced the load time and image size by multiple factors.
 
 ___
 
