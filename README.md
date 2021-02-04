@@ -27,7 +27,7 @@ ___
 ### Instructions for how to build & run the app. 
 *Please provide any information we need to be able to review your app.*
 #### Demo / Installation
-- **Install the Android app** from here: https://www.dropbox.com/s/rh2aqkcaxxyxtia/WeatherApp_Release_Shobhit.apk?dl=0 . This is the release build. If not already done, you might need to allow your Android OS to install `apk` from unknown sources from the `Settings` app. I also released the app on Google Play, to use the private closed alpha testing that they offer. It is still pending review and won't be public. It'd require me to add the gmail IDs of the testers to allow installation. Here is the URL: https://play.google.com/apps/internaltest/4700635866713086531 . Let me know if you want an invitation. Simplest is to just use the dropbox link to install.
+- **Install the Android app** from here: https://www.dropbox.com/s/rh2aqkcaxxyxtia/WeatherApp_Release_Shobhit.apk?dl=0 . I've also included this release build in the folder named `apk` above. To install the apk, you might need to allow your Android OS to install `apk` from unknown sources from the `Settings` app. I also released the app on Google Play, to use the private closed alpha testing that they offer. It is still pending review and won't be public. It'd require me to add the gmail IDs of the testers to allow installation. Here is the URL: https://play.google.com/apps/internaltest/4700635866713086531 . Let me know if you want an invitation. Simplest is to just use the dropbox link to install.
 
 - **Demo video of the app running on Android phone** here:
 
@@ -159,8 +159,10 @@ ___
     - [flutter_native_splash](https://pub.dev/packages/flutter_native_splash):  The Flutter engine takes some time to load, and the app takes some time to initialize. The app was showing blank page for that duration. So to make seamless experience, I added splash screen to both Android and iOS natively. Instead of doing that manually, this package helped me automate that, and save a lot of time.
     
   - **Skeleton**: I used the below way to setup the project. There are many schools of thought on how to setup the skeleton. I prefer to keep the structure in a way, wherein all the classes related to a feature can be find at the same place. It is easier for a new developer to debug, and understand what's going on. That makes it easier to do any bug fixes.
+
   ![](https://user-images.githubusercontent.com/3515359/106870244-bc411f00-6685-11eb-9d98-457857fd29bb.png) 
- - **webP**: Instead of using `png` or `jpg` files, which were large, I convereted most of the background images to `webP`. This reduced the load time and image size by multiple factors.
+  
+  - **webP**: Instead of using `png` or `jpg` files, which were large, I convereted most of the background images to `webP`. This reduced the load time and image size by multiple factors.
 
 ___
 
