@@ -27,7 +27,7 @@ ___
 ### Instructions for how to build & run the app. 
 *Please provide any information we need to be able to review your app.*
 #### Demo / Installation
-- **Install the Android app** from here: https://shobhitpuri.s3.amazonaws.com/apks/WeatherApp_Release_Shobhit.apk. I've also included this release build in the folder named `apk` above. To install the apk, you might need to allow your Android OS to install `apk` from unknown sources from the `Settings` app. I also released the app on Google Play, to use the private closed alpha testing that they offer. It is still pending review and won't be public. It'd require me to add the Gmail IDs of the testers to allow installation. Here is the URL: https://play.google.com/apps/internaltest/4700635866713086531 . Let me know if you want an invitation. Simplest is to just use the dropbox link to install.
+- **Install the Android app** from here: https://shobhitpuri.s3.amazonaws.com/apks/WeatherApp_Release_Shobhit.apk. I've also included this release build in the folder named `apk` above. To install the apk, you might need to allow your Android OS to install `apk` from unknown sources from the `Settings` app. I also released the app on Google Play, to use the private closed alpha testing that they offer. It is still pending review and won't be public. It'd require me to add the Gmail IDs of the testers to allow installation. Here is the URL: https://play.google.com/apps/internaltest/4700635866713086531 . Let me know if you want an invitation. Simplest is to just use the above AWS S3 link to install.
 
 - **Demo video of the app running on Android phone** here:
 
