@@ -1,13 +1,13 @@
 ## Index
-- [Approach](https://github.com/shobhitpuri/coding-tryout/?tab=readme-ov-file#notes)
-- [Features](https://github.com/shobhitpuri/coding-tryout/?tab=readme-ov-file#features-implemented)
-- [Demo - iOS & Android](https://github.com/shobhitpuri/coding-tryout/?tab=readme-ov-file#demo--installation)
-- [Instructions to Build & Run App](https://github.com/shobhitpuri/coding-tryout/?tab=readme-ov-file#instructions-to-build-and-run-the-app-locally)
-- [Workflow Approach](https://github.com/shobhitpuri/coding-tryout/?tab=readme-ov-file#time-spent)
-- [Assumptions](https://github.com/shobhitpuri/coding-tryout/?tab=readme-ov-file#assumptions-made)
-- [Why Flutter?](https://github.com/shobhitpuri/coding-tryout/?tab=readme-ov-file#why-did-you-choose-the-technologyframework-you-used)
-- [Future Considerations](https://github.com/shobhitpuri/coding-tryout/?tab=readme-ov-file#what-did-you-not-include-in-your-solution-that-you-want-us-to-know-about)
-- [Decision Making Approach](https://github.com/shobhitpuri/coding-tryout/?tab=readme-ov-file#other-information-about-your-submission-that-you-feel-its-important-that-we-know-if-applicable)
+- [Approach](#notes)
+- [Features](#features-implemented)
+- [Demo - iOS & Android](#demo--installation)
+- [Instructions to Build & Run App](#instructions-to-build-and-run-the-app-locally)
+- [Workflow Approach](#time-spent)
+- [Assumptions](#assumptions-made)
+- [Why Flutter?](#why-did-you-choose-the-technologyframework-you-used)
+- [Future Considerations](#what-did-you-not-include-in-your-solution-that-you-want-us-to-know-about)
+- [Decision Making Approach](#other-information-about-your-submission-that-you-feel-its-important-that-we-know-if-applicable)
 
 ## Problem Statement
 [Weather App Tryout.pdf](https://github.com/shobhitpuri/flutter-tryout/files/12590105/Take_Home_Test_-_Technical_Architect__Mobile_Architect.pdf)
